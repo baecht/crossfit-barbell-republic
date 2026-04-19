@@ -65,10 +65,11 @@ body.menu-open .mobile-menu{transform:translateY(0)}
 .coaches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .coach-mini{background:#16213e;border-radius:12px;padding:2rem 1.5rem;text-align:center;transition:all 0.3s;border:1px solid rgba(255,255,255,0.06)}
 .coach-mini:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.3);border-color:rgba(255,255,255,0.12)}
-.coach-mini .avatar{width:90px;height:90px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;background:#0f3460;border:3px solid}
+.coach-mini .avatar{width:90px;height:90px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;background:#0f3460;border:3px solid;background-size:cover;background-position:center top;overflow:hidden}
 .coach-mini .avatar.l1{border-color:#CD7F32;color:#CD7F32}
 .coach-mini .avatar.l2{border-color:#C0C0C0;color:#C0C0C0}
 .coach-mini .avatar.l3{border-color:#FFD700;color:#FFD700}
+.coach-mini .avatar.has-photo{color:transparent;font-size:0}
 .coach-mini .name{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:0.3rem}
 .coach-mini .role{font-size:0.8rem;color:#888;margin-bottom:0.5rem}
 .coach-mini .badge{display:inline-block;padding:3px 10px;border-radius:15px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px}
@@ -212,7 +213,7 @@ footer .socials a:hover{color:#e63946}
 <section class="coaches-preview">
   <div class="coaches-grid">
     <div class="coach-mini">
-      <div class="avatar l2">MG</div>
+      <div class="avatar l2 has-photo" style="background-image:url('coach-marshall.jpg')">MG</div>
       <div class="name">Marshall Giasson</div>
       <div class="role">Co-Owner</div>
       <span class="badge l2">CF-L2</span>
@@ -224,7 +225,7 @@ footer .socials a:hover{color:#e63946}
       <span class="badge l2">CF-L2</span>
     </div>
     <div class="coach-mini">
-      <div class="avatar l3">MB</div>
+      <div class="avatar l3 has-photo" style="background-image:url('coach-michael.jpg')">MB</div>
       <div class="name">Michael Baecht</div>
       <div class="role">Coach</div>
       <span class="badge l3">CF-L3</span>

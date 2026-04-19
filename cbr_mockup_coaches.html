@@ -69,10 +69,11 @@ body.menu-open .mobile-menu{transform:translateY(0)}
 @media(max-width:540px){.coaches-grid{grid-template-columns:1fr}}
 .coach-card{background:#16213e;border-radius:14px;padding:2.5rem;display:flex;gap:2rem;align-items:flex-start;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;position:relative;overflow:hidden}
 .coach-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3);border-color:rgba(255,255,255,0.12)}
-.coach-avatar{flex-shrink:0;width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:#0f3460;border:3px solid}
+.coach-avatar{flex-shrink:0;width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:#0f3460;border:3px solid;background-size:cover;background-position:center top;overflow:hidden}
 .coach-avatar.l1{border-color:#CD7F32;color:#CD7F32}
 .coach-avatar.l2{border-color:#C0C0C0;color:#C0C0C0}
 .coach-avatar.l3{border-color:#FFD700;color:#FFD700}
+.coach-avatar.has-photo{color:transparent;font-size:0}
 .coach-info{flex:1;min-width:0}
 .coach-name{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:0.3rem}
 .coach-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0.8rem}
@@ -159,16 +160,16 @@ footer .socials a:hover{color:#e63946}
   <h2>WHAT DO THESE CERTIFICATIONS MEAN?</h2>
   <div class="cert-grid">
     <div class="cert-card l1">
-      <div class="cert-label"><div class="cert-badge-icon">L1</div> CF-L1 &mdash; Level 1 Trainer</div>
-      <p>CrossFit Level 1 Trainer &mdash; The foundational coaching certification covering CrossFit methodology, movement standards, and class programming. This is where every coach starts.</p>
+      <div class="cert-label"><div class="cert-badge-icon">L1</div> CrossFit Level 1 Trainer (CF-L1)</div>
+      <p>The foundational coaching certification covering CrossFit methodology, movement standards, and class programming. This is where every coach starts.</p>
     </div>
     <div class="cert-card l2">
-      <div class="cert-label"><div class="cert-badge-icon">L2</div> CF-L2 &mdash; Level 2 Trainer</div>
-      <p>CrossFit Level 2 Trainer &mdash; Advanced coaching skills including athlete assessment, movement correction, class management, and program design. Requires demonstrated coaching ability beyond foundational knowledge.</p>
+      <div class="cert-label"><div class="cert-badge-icon">L2</div> CrossFit Level 2 Trainer (CF-L2)</div>
+      <p>Advanced coaching skills including athlete assessment, movement correction, class management, and program design. Requires demonstrated coaching ability beyond foundational knowledge.</p>
     </div>
     <div class="cert-card l3">
-      <div class="cert-label"><div class="cert-badge-icon">L3</div> CF-L3 &mdash; Level 3 Trainer</div>
-      <p>CrossFit Level 3 Trainer &mdash; The highest individual coaching credential. Requires demonstrated coaching excellence across all domains, peer evaluation, and years of verified experience.</p>
+      <div class="cert-label"><div class="cert-badge-icon">L3</div> Certified CrossFit Trainer (CF-L3)</div>
+      <p>CrossFit's official title for their highest individual trainer credential. Requires a proctored exam, demonstrated coaching excellence across all domains, and years of verified experience &mdash; well beyond the Level 1 and Level 2 seminar courses.</p>
       <div class="rarity">Fewer than 2% of CrossFit coaches worldwide hold this certification.</div>
     </div>
   </div>
@@ -181,7 +182,7 @@ footer .socials a:hover{color:#e63946}
 
     <!-- Marshall -->
     <div class="coach-card">
-      <div class="coach-avatar l2">MG</div>
+      <div class="coach-avatar l2 has-photo" style="background-image:url('coach-marshall.jpg')">MG</div>
       <div class="coach-info">
         <div class="coach-name">Marshall Giasson</div>
         <div class="coach-badges">
@@ -214,7 +215,7 @@ footer .socials a:hover{color:#e63946}
 
     <!-- Michael -->
     <div class="coach-card">
-      <div class="coach-avatar l3">MB</div>
+      <div class="coach-avatar l3 has-photo" style="background-image:url('coach-michael.jpg')">MB</div>
       <div class="coach-info">
         <div class="coach-name">Michael Baecht</div>
         <div class="coach-badges">
