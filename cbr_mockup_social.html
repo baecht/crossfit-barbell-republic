@@ -51,13 +51,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(22,33,62,0.97);backdrop-fi
 
 /* TESTIMONIALS */
 .testimonials{padding:0 2rem 4rem;max-width:1100px;margin:0 auto}
-.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;align-items:start}
 .testimonial-card{background:#16213e;border-radius:12px;padding:2rem;border-left:4px solid #e63946;position:relative;transition:transform 0.3s}
 .testimonial-card:hover{transform:translateY(-4px)}
 .testimonial-card .quote-mark{font-family:Georgia,serif;font-size:4rem;color:rgba(230,57,70,0.2);line-height:1;margin-bottom:-1rem}
 .testimonial-card .quote{font-style:italic;color:#c0c0d0;font-size:0.95rem;line-height:1.7;margin-bottom:1.2rem}
-.testimonial-card .author{font-weight:600;font-size:0.9rem;color:#fff}
-.testimonial-card .since{font-size:0.8rem;color:#888;margin-top:0.2rem}
+.testimonial-card .author{font-weight:600;font-size:0.95rem;color:#fff}
+.testimonial-card .since{font-size:0.8rem;color:#888;margin-top:0.25rem;display:flex;align-items:center;gap:6px}
+.testimonial-card .since .fb-badge{background:#1877F2;color:#fff;font-weight:700;padding:2px 7px;border-radius:3px;font-size:0.68rem;letter-spacing:0.5px}
 
 /* SOCIAL CTA */
 .social-cta{padding:4rem 2rem;text-align:center;background:#16213e;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
@@ -162,21 +163,15 @@ footer .socials a:hover{color:#e63946}
   <div class="testimonial-grid">
     <div class="testimonial-card">
       <div class="quote-mark">&ldquo;</div>
-      <p class="quote">I walked in terrified. Six months later, I can't imagine my life without this place. The coaches meet you exactly where you are.</p>
-      <div class="author">[Member Name]</div>
-      <div class="since">Member since 2023</div>
+      <p class="quote">If you haven't been here yet, stop what you're doing and get there ASAP. Being a part of the Barbell Republic family (yes it feels like family!) has truly transformed my life in so many ways. Yes I've shed some serious weight and toned up, but it's been wonderful for my energy level, spirit and mental well being. I've always hated working out, but this place makes it fun! It's different every day so you never get bored and everything is scalable. It's all about learning functional movement that translates to basic things you do day to day. So get your butt up there and start having fun and changing your life for the better!</p>
+      <div class="author">Sarah Bergeron</div>
+      <div class="since"><span class="fb-badge">FB</span> Recommended &bull; Aug 2019</div>
     </div>
     <div class="testimonial-card">
       <div class="quote-mark">&ldquo;</div>
-      <p class="quote">The coaching here is different. They actually know your name, your goals, and your limitations. Every workout is scaled to YOU.</p>
-      <div class="author">[Member Name]</div>
-      <div class="since">Member since 2021</div>
-    </div>
-    <div class="testimonial-card">
-      <div class="quote-mark">&ldquo;</div>
-      <p class="quote">I've been to three CrossFit gyms. Barbell Republic is the only one where the coaches hold real certifications AND actually know how to use them.</p>
-      <div class="author">[Member Name]</div>
-      <div class="since">Member since 2019</div>
+      <p class="quote">Great culture and atmosphere. Everyone is welcoming and pleasant to be around. You are welcomed with open arms, smiles and firm hand shakes. They do work and do it well.</p>
+      <div class="author">In The Arena with Grant Rogers</div>
+      <div class="since"><span class="fb-badge">FB</span> Recommended &bull; Oct 2022</div>
     </div>
   </div>
 </section>
