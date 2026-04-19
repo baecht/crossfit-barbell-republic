@@ -22,6 +22,19 @@ nav{position:sticky;top:0;z-index:100;background:rgba(22,33,62,0.97);backdrop-fi
 .cta-btn{background:#e63946;color:#fff !important;padding:10px 22px;border-radius:6px;font-weight:600;font-size:0.85rem;letter-spacing:0.5px;transition:all 0.3s;display:inline-block}
 .cta-btn:hover{background:#d62839;transform:translateY(-1px);text-decoration:none !important}
 
+/* HAMBURGER + MOBILE MENU */
+.hamburger{display:none;background:transparent;border:0;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:101}
+.hamburger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s ease}
+body.menu-open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .hamburger span:nth-child(2){opacity:0}
+body.menu-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:70px;left:0;right:0;background:rgba(15,52,96,0.98);backdrop-filter:blur(10px);padding:1.2rem;z-index:99;border-bottom:1px solid rgba(255,255,255,0.1);transform:translateY(-110%);transition:transform 0.3s ease;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+body.menu-open .mobile-menu{transform:translateY(0)}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.mobile-menu a{display:block;padding:0.9rem 1rem;color:#ccc;font-size:1rem;font-family:'Oswald',sans-serif;letter-spacing:1px;border-radius:8px;text-decoration:none;transition:background 0.2s}
+.mobile-menu a:hover,.mobile-menu a.active{background:rgba(255,255,255,0.06);color:#fff;text-decoration:none}
+.mobile-menu a.mobile-cta-btn{background:#e63946;color:#fff !important;text-align:center;font-weight:700;margin-top:0.5rem}
+
 /* HERO */
 .hero{padding:5rem 2rem 4rem;text-align:center;background:linear-gradient(135deg,#16213e 0%,#1a1a2e 50%,#0f3460 100%)}
 .hero h1{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;letter-spacing:2px;margin-bottom:1rem}
@@ -85,6 +98,7 @@ footer .socials a:hover{color:#e63946}
 /* RESPONSIVE */
 @media(max-width:768px){
   .nav-links{display:none}
+  .hamburger{display:flex}
   .hero h1{font-size:2rem}
   .stats{grid-template-columns:repeat(2,1fr)}
   .ig-grid{grid-template-columns:repeat(2,1fr)}
@@ -112,7 +126,21 @@ footer .socials a:hover{color:#e63946}
     <li><a href="cbr_mockup_freetrial.html">Schedule</a></li>
     <li><a href="cbr_mockup_freetrial.html" class="cta-btn">FREE FIRST CLASS</a></li>
   </ul>
+  <button class="hamburger" aria-label="Toggle menu" onclick="document.body.classList.toggle('menu-open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <ul>
+    <li><a href="cbr_mockup_homepage.html">Home</a></li>
+    <li><a href="cbr_mockup_coaches.html">Coaches</a></li>
+    <li><a href="cbr_mockup_social.html" class="active">Community</a></li>
+    <li><a href="cbr_mockup_freetrial.html">Schedule</a></li>
+    <li><a href="cbr_mockup_freetrial.html" class="mobile-cta-btn">FREE FIRST CLASS</a></li>
+  </ul>
+</div>
 
 <!-- HERO -->
 <section class="hero">
