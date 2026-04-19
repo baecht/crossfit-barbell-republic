@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free First Class — CrossFit Barbell Republic</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#1a1a2e;color:#fff;line-height:1.6}
+a{color:#e63946;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(22,33,62,0.97);backdrop-filter:blur(10px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{height:45px;border-radius:6px}
+.nav-logo span{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:1px}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:#ccc;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#fff;text-decoration:none}
+.cta-btn{background:#e63946;color:#fff !important;padding:10px 22px;border-radius:6px;font-weight:600;font-size:0.85rem;letter-spacing:0.5px;transition:all 0.3s;display:inline-block}
+.cta-btn:hover{background:#d62839;transform:translateY(-1px);text-decoration:none !important}
+
+/* HERO + FORM */
+.hero-form{padding:4rem 2rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.hero-text h1{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;letter-spacing:2px;line-height:1.1;margin-bottom:1rem}
+.hero-text h1 span{color:#e63946}
+.hero-text .subtitle{font-size:1.1rem;color:#b0b0c0;line-height:1.7;margin-bottom:2rem}
+.hero-text .trust-points{list-style:none}
+.hero-text .trust-points li{padding:0.4rem 0;color:#a0a0b8;font-size:0.95rem;display:flex;align-items:center;gap:10px}
+.hero-text .trust-points li .check{color:#e63946;font-weight:700;font-size:1.1rem}
+
+/* FORM */
+.form-card{background:#16213e;border-radius:14px;padding:2.5rem;border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+.form-card h2{font-family:'Oswald',sans-serif;font-size:1.5rem;margin-bottom:0.5rem;letter-spacing:0.5px}
+.form-card .form-sub{color:#888;font-size:0.85rem;margin-bottom:1.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.4rem}
+.form-group input,.form-group select{width:100%;padding:12px 16px;border:1px solid rgba(255,255,255,0.12);border-radius:8px;background:#0f3460;color:#fff;font-family:'Inter',sans-serif;font-size:0.95rem;transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus{border-color:#e63946}
+.form-group input::placeholder{color:#555}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' fill='none' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-group select option{background:#16213e;color:#fff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.submit-btn{width:100%;padding:14px;background:#e63946;color:#fff;border:none;border-radius:8px;font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:1px;cursor:pointer;transition:all 0.3s;margin-top:0.5rem}
+.submit-btn:hover{background:#d62839;transform:translateY(-1px);box-shadow:0 6px 20px rgba(230,57,70,0.3)}
+.form-note{text-align:center;margin-top:0.8rem;font-size:0.8rem;color:#666}
+
+/* WHAT TO EXPECT */
+.expect-section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:2.5rem}
+.section-header h2{font-family:'Oswald',sans-serif;font-size:2rem;letter-spacing:1.5px;margin-bottom:0.5rem}
+.section-header p{color:#888;font-size:0.95rem}
+.expect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.expect-card{background:#16213e;border-radius:12px;padding:2rem 1.5rem;text-align:center;border:1px solid rgba(255,255,255,0.06);transition:transform 0.3s}
+.expect-card:hover{transform:translateY(-4px)}
+.expect-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.expect-card p{font-size:0.88rem;color:#a0a0b8;line-height:1.6}
+
+/* SCHEDULE */
+.schedule-section{padding:2rem 2rem 4rem;max-width:1000px;margin:0 auto}
+.schedule-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden}
+.schedule-table th{background:#e63946;padding:12px 8px;font-family:'Oswald',sans-serif;font-size:0.85rem;letter-spacing:0.5px;text-transform:uppercase}
+.schedule-table td{padding:10px 8px;text-align:center;font-size:0.8rem;color:#b0b0c0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.schedule-table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+.schedule-table tr:nth-child(odd) td{background:#16213e}
+.schedule-table td:first-child{font-family:'Oswald',sans-serif;font-weight:600;color:#fff;text-align:left;padding-left:16px}
+.schedule-table td.empty{color:#444}
+
+/* FAQ */
+.faq-section{padding:3rem 2rem 4rem;max-width:800px;margin:0 auto}
+details{background:#16213e;border-radius:10px;margin-bottom:0.8rem;border:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:all 0.3s}
+details[open]{border-color:rgba(230,57,70,0.3)}
+summary{padding:1.2rem 1.5rem;font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;letter-spacing:0.3px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:1.3rem;color:#e63946;font-weight:300;transition:transform 0.3s}
+details[open] summary::after{content:'-'}
+details[open] summary{border-bottom:1px solid rgba(255,255,255,0.06)}
+.faq-answer{padding:1.2rem 1.5rem;color:#a0a0b8;font-size:0.92rem;line-height:1.7}
+
+/* LOCATION */
+.location-section{padding:2rem 2rem 4rem;max-width:800px;margin:0 auto;text-align:center}
+.map-placeholder{background:#2a2a3e;border-radius:12px;height:250px;display:flex;align-items:center;justify-content:center;color:#555;font-size:0.9rem;border:1px solid rgba(255,255,255,0.06);margin-bottom:1rem}
+.location-details{color:#888;font-size:0.9rem}
+.location-details strong{color:#ccc}
+
+/* FINAL CTA */
+.final-cta{padding:5rem 2rem;text-align:center;background:linear-gradient(135deg,#16213e 0%,#1a1a2e 100%);border-top:1px solid rgba(255,255,255,0.05)}
+.final-cta h2{font-family:'Oswald',sans-serif;font-size:2rem;margin-bottom:0.8rem;letter-spacing:1px}
+.final-cta p{color:#888;font-size:1rem;margin-bottom:2rem;max-width:450px;margin-left:auto;margin-right:auto}
+.final-cta .cta-btn{padding:16px 40px;font-family:'Oswald',sans-serif;font-size:1.1rem;letter-spacing:1px;border-radius:8px;box-shadow:0 4px 20px rgba(230,57,70,0.3)}
+
+/* FOOTER */
+footer{background:#0d1117;padding:3rem 2rem;text-align:center;color:#666;font-size:0.85rem}
+footer .address{color:#999;margin-bottom:0.5rem}
+footer .socials{margin:1rem 0;display:flex;justify-content:center;gap:1.5rem}
+footer .socials a{color:#666;transition:color 0.2s}
+footer .socials a:hover{color:#e63946}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero-form{grid-template-columns:1fr;gap:2rem;padding:2rem 1.5rem}
+  .hero-text h1{font-size:2.2rem}
+  .form-row{grid-template-columns:1fr}
+  .expect-grid{grid-template-columns:repeat(2,1fr)}
+  .schedule-table{font-size:0.7rem}
+  .final-cta h2{font-size:1.6rem}
+}
+@media(max-width:480px){
+  .hero-text h1{font-size:1.8rem}
+  .expect-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo.jpg" alt="CBR" onerror="this.style.display='none'">
+    <span>BARBELL REPUBLIC</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="cbr_mockup_homepage.html">Home</a></li>
+    <li><a href="cbr_mockup_coaches.html">Coaches</a></li>
+    <li><a href="cbr_mockup_social.html">Community</a></li>
+    <li><a href="cbr_mockup_freetrial.html" style="color:#fff">Schedule</a></li>
+    <li><a href="cbr_mockup_freetrial.html" class="cta-btn">FREE FIRST CLASS</a></li>
+  </ul>
+</nav>
+
+<!-- HERO + FORM -->
+<section class="hero-form">
+  <div class="hero-text">
+    <h1>YOUR FIRST<br>CLASS IS <span>FREE</span></h1>
+    <p class="subtitle">No experience needed. No commitments. Just show up and see what CrossFit Barbell Republic is all about.</p>
+    <ul class="trust-points">
+      <li><span class="check">&#10003;</span> All fitness levels welcome</li>
+      <li><span class="check">&#10003;</span> Certified coaches (CF-L1, L2, and L3)</li>
+      <li><span class="check">&#10003;</span> Every workout scaled to your ability</li>
+      <li><span class="check">&#10003;</span> No pressure to sign up</li>
+      <li><span class="check">&#10003;</span> All equipment provided</li>
+    </ul>
+  </div>
+  <div class="form-card">
+    <h2>CLAIM YOUR FREE CLASS</h2>
+    <p class="form-sub">Fill this out and we'll get you scheduled.</p>
+    <form onsubmit="return false">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="john@example.com">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="(903) 555-1234">
+      </div>
+      <div class="form-group">
+        <label>Preferred Class Time</label>
+        <select>
+          <option value="">Choose a time...</option>
+          <option>5:30 AM — Early Bird</option>
+          <option>11:30 AM — Midday</option>
+          <option>4:00 PM — Afternoon</option>
+          <option>5:00 PM — After Work</option>
+          <option>6:00 PM — Evening</option>
+          <option>Saturday 10:00 AM — Team WOD</option>
+          <option>Thursday 4:30 PM — Open Box</option>
+          <option>Not sure yet — help me choose!</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">CLAIM MY FREE CLASS &rarr;</button>
+      <p class="form-note">We'll reach out within 24 hours to get you scheduled.</p>
+    </form>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<div class="expect-section">
+  <div class="section-header">
+    <h2>WHAT TO EXPECT ON YOUR FIRST DAY</h2>
+  </div>
+  <div class="expect-grid">
+    <div class="expect-card">
+      <div class="icon">&#x1F45F;</div>
+      <p>Wear comfortable workout clothes and athletic shoes</p>
+    </div>
+    <div class="expect-card">
+      <div class="icon">&#x23F1;</div>
+      <p>Classes are 1 hour &mdash; warm-up, skill/strength, workout, cool-down</p>
+    </div>
+    <div class="expect-card">
+      <div class="icon">&#x1F91D;</div>
+      <p>A coach will greet you, learn your background, and scale everything to your level</p>
+    </div>
+    <div class="expect-card">
+      <div class="icon">&#x1F4AA;</div>
+      <p>You'll leave knowing exactly whether CrossFit is right for you</p>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="section-header" style="padding-top:1rem">
+  <h2>CLASS SCHEDULE</h2>
+  <p>Find the time that works for you.</p>
+</div>
+<section class="schedule-section">
+  <table class="schedule-table">
+    <thead>
+      <tr><th>Day</th><th>5:30 AM</th><th>11:30 AM</th><th>4:00 PM</th><th>5:00 PM</th><th>6:00 PM</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Monday</td><td>CrossFit</td><td>CF / Open Box</td><td>CrossFit</td><td>CrossFit</td><td>CrossFit</td></tr>
+      <tr><td>Tuesday</td><td>CrossFit</td><td>CF / Open Box</td><td>CrossFit</td><td>CrossFit</td><td>CrossFit</td></tr>
+      <tr><td>Wednesday</td><td>CrossFit</td><td>CF / Open Box</td><td>CrossFit</td><td>CrossFit</td><td>CrossFit</td></tr>
+      <tr><td>Thursday</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td>Open Box<br>4:30&ndash;6:30 PM</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+      <tr><td>Friday</td><td>CrossFit</td><td>CF / Open Box</td><td>CrossFit</td><td>CrossFit</td><td>CrossFit</td></tr>
+      <tr><td>Saturday</td><td class="empty">&mdash;</td><td>TEAM WOD<br>10:00 AM</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- FAQ -->
+<div class="section-header">
+  <h2>FREQUENTLY ASKED QUESTIONS</h2>
+</div>
+<section class="faq-section">
+  <details>
+    <summary>Do I need CrossFit experience?</summary>
+    <div class="faq-answer">Not at all! Our coaches scale every workout to your fitness level. Whether you've never picked up a barbell or you're a seasoned athlete, we'll meet you where you are.</div>
+  </details>
+  <details>
+    <summary>What if I'm not fit enough?</summary>
+    <div class="faq-answer">CrossFit is for everyone. Our members range from complete beginners to competitive athletes. The workout is the same &mdash; the weights and movements are adjusted to YOU.</div>
+  </details>
+  <details>
+    <summary>What should I bring?</summary>
+    <div class="faq-answer">Comfortable workout clothes, athletic shoes (cross-trainers work great), a water bottle, and a towel. We provide all the equipment.</div>
+  </details>
+  <details>
+    <summary>How long is a class?</summary>
+    <div class="faq-answer">One hour. We start with a group warm-up, move into skill or strength work, then hit the workout of the day (WOD), and finish with a cool-down.</div>
+  </details>
+  <details>
+    <summary>What happens after my free class?</summary>
+    <div class="faq-answer">No pressure! If you loved it, we'll walk you through our membership options. If you want to think about it, that's totally fine too.</div>
+  </details>
+</section>
+
+<!-- LOCATION -->
+<div class="section-header">
+  <h2>FIND US</h2>
+</div>
+<section class="location-section">
+  <div class="map-placeholder">&#x1F4CD; Google Maps embed &mdash; 316 W Coffin St, Denison TX 75020</div>
+  <div class="location-details">
+    <strong>316 W Coffin St, Denison TX 75020</strong><br>
+    Classes run Monday through Saturday &mdash; see schedule above.
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>STILL THINKING ABOUT IT?</h2>
+  <p>The hardest part is walking through the door. We'll handle the rest.</p>
+  <a href="#" class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" style="padding:16px 40px;font-family:'Oswald',sans-serif;font-size:1.1rem;letter-spacing:1px;border-radius:8px">BOOK MY FREE CLASS NOW &rarr;</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="address">316 W Coffin St, Denison TX 75020</div>
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">TikTok</a>
+  </div>
+  <p>&copy; 2026 CrossFit Barbell Republic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

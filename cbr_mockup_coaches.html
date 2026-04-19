@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Our Coaches — CrossFit Barbell Republic</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#1a1a2e;color:#fff;line-height:1.6}
+a{color:#e63946;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(22,33,62,0.97);backdrop-filter:blur(10px);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{height:45px;border-radius:6px}
+.nav-logo span{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:1px}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:#ccc;font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#fff;text-decoration:none}
+.nav-links .cta-btn{background:#e63946;color:#fff;padding:10px 22px;border-radius:6px;font-weight:600;font-size:0.85rem;letter-spacing:0.5px;transition:all 0.3s}
+.nav-links .cta-btn:hover{background:#d62839;transform:translateY(-1px)}
+
+/* HERO */
+.hero{padding:5rem 2rem 4rem;text-align:center;background:linear-gradient(135deg,#16213e 0%,#1a1a2e 50%,#0f3460 100%);position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,#1a1a2e)}
+.hero h1{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;letter-spacing:2px;margin-bottom:1.2rem;line-height:1.1}
+.hero h1 span{color:#e63946}
+.hero p{max-width:700px;margin:0 auto;font-size:1.1rem;color:#b0b0c0;line-height:1.7}
+
+/* CERT EXPLAINER */
+.cert-section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+.cert-section h2{font-family:'Oswald',sans-serif;font-size:1.8rem;text-align:center;margin-bottom:2.5rem;letter-spacing:1px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.cert-card{background:#16213e;border-radius:12px;padding:2rem;border-top:4px solid;transition:transform 0.3s}
+.cert-card:hover{transform:translateY(-4px)}
+.cert-card.l1{border-top-color:#CD7F32}
+.cert-card.l2{border-top-color:#C0C0C0}
+.cert-card.l3{border-top-color:#FFD700}
+.cert-card .cert-label{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:0.8rem;display:flex;align-items:center;gap:10px}
+.cert-card.l1 .cert-label{color:#CD7F32}
+.cert-card.l2 .cert-label{color:#C0C0C0}
+.cert-card.l3 .cert-label{color:#FFD700}
+.cert-card .cert-badge-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;border:2px solid}
+.cert-card.l1 .cert-badge-icon{border-color:#CD7F32;color:#CD7F32}
+.cert-card.l2 .cert-badge-icon{border-color:#C0C0C0;color:#C0C0C0}
+.cert-card.l3 .cert-badge-icon{border-color:#FFD700;color:#FFD700}
+.cert-card p{color:#a0a0b8;font-size:0.95rem;line-height:1.6}
+.cert-card .rarity{margin-top:0.8rem;font-size:0.85rem;font-weight:600;color:#e63946;font-style:italic}
+
+/* COACH CARDS */
+.coaches-section{padding:3rem 2rem 5rem;max-width:1100px;margin:0 auto}
+.coaches-section h2{font-family:'Oswald',sans-serif;font-size:2rem;text-align:center;margin-bottom:3rem;letter-spacing:1px}
+.coaches-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:2rem}
+@media(max-width:540px){.coaches-grid{grid-template-columns:1fr}}
+.coach-card{background:#16213e;border-radius:14px;padding:2.5rem;display:flex;gap:2rem;align-items:flex-start;border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;position:relative;overflow:hidden}
+.coach-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3);border-color:rgba(255,255,255,0.12)}
+.coach-avatar{flex-shrink:0;width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;background:#0f3460;border:3px solid}
+.coach-avatar.l1{border-color:#CD7F32;color:#CD7F32}
+.coach-avatar.l2{border-color:#C0C0C0;color:#C0C0C0}
+.coach-avatar.l3{border-color:#FFD700;color:#FFD700}
+.coach-info{flex:1;min-width:0}
+.coach-name{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:0.3rem}
+.coach-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0.8rem}
+.role-badge{padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;letter-spacing:0.5px;text-transform:uppercase}
+.role-badge.owner{background:rgba(230,57,70,0.15);color:#e63946;border:1px solid rgba(230,57,70,0.3)}
+.role-badge.coach{background:rgba(255,255,255,0.08);color:#999;border:1px solid rgba(255,255,255,0.15)}
+.cert-badge{padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:700;letter-spacing:0.5px;display:flex;align-items:center;gap:5px}
+.cert-badge.l1{background:rgba(205,127,50,0.15);color:#CD7F32;border:1px solid rgba(205,127,50,0.3)}
+.cert-badge.l2{background:rgba(192,192,192,0.15);color:#C0C0C0;border:1px solid rgba(192,192,192,0.3)}
+.cert-badge.l3{background:rgba(255,215,0,0.15);color:#FFD700;border:1px solid rgba(255,215,0,0.3)}
+.cert-badge .shield{font-size:0.85rem}
+.coach-detail{font-size:0.88rem;color:#a0a0b8;margin-bottom:0.4rem}
+.coach-detail strong{color:#ccc;font-weight:500}
+.coach-bio{font-size:0.88rem;color:#777;font-style:italic;margin-top:0.8rem;line-height:1.5;border-left:2px solid #333;padding-left:12px}
+
+/* BOTTOM CTA */
+.bottom-cta{padding:5rem 2rem;text-align:center;background:linear-gradient(135deg,#e63946 0%,#d62839 50%,#c41e30 100%)}
+.bottom-cta h2{font-family:'Oswald',sans-serif;font-size:2.5rem;margin-bottom:0.8rem;letter-spacing:1px}
+.bottom-cta p{font-size:1.1rem;margin-bottom:2rem;opacity:0.9;max-width:500px;margin-left:auto;margin-right:auto}
+.bottom-cta .btn{display:inline-block;background:#fff;color:#e63946;padding:16px 40px;border-radius:8px;font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:1px;transition:all 0.3s;text-decoration:none}
+.bottom-cta .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3);text-decoration:none}
+
+/* FOOTER */
+footer{background:#0d1117;padding:3rem 2rem;text-align:center;color:#666;font-size:0.85rem}
+footer .address{color:#999;margin-bottom:0.5rem}
+footer .socials{margin:1rem 0;display:flex;justify-content:center;gap:1.5rem}
+footer .socials a{color:#666;font-size:1.2rem;transition:color 0.2s}
+footer .socials a:hover{color:#e63946}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero h1{font-size:2rem}
+  .hero p{font-size:0.95rem}
+  .cert-grid{grid-template-columns:1fr}
+  .coach-card{flex-direction:column;align-items:center;text-align:center;padding:2rem 1.5rem}
+  .coach-info{text-align:center}
+  .coach-badges{justify-content:center}
+  .coach-bio{border-left:none;padding-left:0;border-top:1px solid #333;padding-top:10px;text-align:center}
+  .bottom-cta h2{font-size:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo.jpg" alt="CBR Logo" onerror="this.style.display='none'">
+    <span>BARBELL REPUBLIC</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="cbr_mockup_homepage.html">Home</a></li>
+    <li><a href="cbr_mockup_coaches.html" style="color:#fff">Coaches</a></li>
+    <li><a href="cbr_mockup_social.html">Community</a></li>
+    <li><a href="cbr_mockup_freetrial.html">Schedule</a></li>
+    <li><a href="cbr_mockup_freetrial.html" class="cta-btn">FREE FIRST CLASS</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>TRAIN WITH <span>CERTIFIED</span><br>CROSSFIT COACHES</h1>
+  <p>Every coach at Barbell Republic holds a CrossFit certification. Our team includes CF-L1, L2, and L3 certified coaches &mdash; because your training deserves qualified leadership.</p>
+</section>
+
+<!-- CERTIFICATION EXPLAINER -->
+<section class="cert-section">
+  <h2>WHAT DO THESE CERTIFICATIONS MEAN?</h2>
+  <div class="cert-grid">
+    <div class="cert-card l1">
+      <div class="cert-label"><div class="cert-badge-icon">L1</div> CF-L1 &mdash; Level 1 Trainer</div>
+      <p>CrossFit Level 1 Trainer &mdash; The foundational coaching certification covering CrossFit methodology, movement standards, and class programming. This is where every coach starts.</p>
+    </div>
+    <div class="cert-card l2">
+      <div class="cert-label"><div class="cert-badge-icon">L2</div> CF-L2 &mdash; Level 2 Trainer</div>
+      <p>CrossFit Level 2 Trainer &mdash; Advanced coaching skills including athlete assessment, movement correction, class management, and program design. Requires demonstrated coaching ability beyond foundational knowledge.</p>
+    </div>
+    <div class="cert-card l3">
+      <div class="cert-label"><div class="cert-badge-icon">L3</div> CF-L3 &mdash; Level 3 Trainer</div>
+      <p>CrossFit Level 3 Trainer &mdash; The highest individual coaching credential. Requires demonstrated coaching excellence across all domains, peer evaluation, and years of verified experience.</p>
+      <div class="rarity">Fewer than 2% of CrossFit coaches worldwide hold this certification.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COACH CARDS -->
+<section class="coaches-section">
+  <h2>YOUR COACHING TEAM</h2>
+  <div class="coaches-grid">
+
+    <!-- Marshall -->
+    <div class="coach-card">
+      <div class="coach-avatar l2">MG</div>
+      <div class="coach-info">
+        <div class="coach-name">Marshall Giasson</div>
+        <div class="coach-badges">
+          <span class="role-badge owner">Co-Owner</span>
+          <span class="cert-badge l2"><span class="shield">&#x1f6e1;</span> CF-L2</span>
+        </div>
+        <div class="coach-detail"><strong>Credentials:</strong> CF-L2 &bull; Lesson Planning &bull; Scaling &bull; Spot the Flaw</div>
+        <div class="coach-detail"><strong>CrossFit Open Judge:</strong> 2017, 2018, 2022, 2023, 2024</div>
+        <div class="coach-detail"><strong>Classes:</strong> Tue 5:30 AM &bull; Wed 5:30 AM</div>
+        <div class="coach-bio">[Coach bio &mdash; 2-3 sentences about background, coaching philosophy, and what drives them]</div>
+      </div>
+    </div>
+
+    <!-- Dustin -->
+    <div class="coach-card">
+      <div class="coach-avatar l2">DB</div>
+      <div class="coach-info">
+        <div class="coach-name">Dustin Bergeron</div>
+        <div class="coach-badges">
+          <span class="role-badge owner">Co-Owner</span>
+          <span class="cert-badge l2"><span class="shield">&#x1f6e1;</span> CF-L2</span>
+        </div>
+        <div class="coach-detail"><strong>Specialties:</strong> CrossFit Kids &bull; Nutrition I &bull; Anatomy</div>
+        <div class="coach-detail"><strong>Credentials:</strong> CF-L2 &bull; Scaling &bull; Spot the Flaw</div>
+        <div class="coach-detail"><strong>CrossFit Open Judge:</strong> 2017, 2018, 2021, 2022, 2024</div>
+        <div class="coach-detail"><strong>Classes:</strong> Schedule varies</div>
+        <div class="coach-bio">[Coach bio &mdash; 2-3 sentences about background, coaching philosophy, and what drives them]</div>
+      </div>
+    </div>
+
+    <!-- Michael -->
+    <div class="coach-card">
+      <div class="coach-avatar l3">MB</div>
+      <div class="coach-info">
+        <div class="coach-name">Michael Baecht</div>
+        <div class="coach-badges">
+          <span class="role-badge coach">Coach</span>
+          <span class="cert-badge l3"><span class="shield">&#x1f6e1;</span> CF-L3</span>
+        </div>
+        <div class="coach-detail"><strong>Specialties:</strong> CrossFit Kids &bull; Masters Athletes &bull; Nutrition I &bull; Pregnant &amp; Postpartum &bull; Running &bull; Programming</div>
+        <div class="coach-detail"><strong>Credentials:</strong> CF-L3 &bull; Advanced Judges &bull; Anatomy &bull; Coaching Fundamentals &bull; Dumbbells &bull; Lesson Planning &bull; The Professional Coach &bull; Scaling &bull; Spot the Flaw</div>
+        <div class="coach-detail"><strong>CrossFit Open Judge:</strong> 2018&ndash;2026 (9 consecutive years)</div>
+        <div class="coach-detail"><strong>Classes:</strong> Mon&ndash;Fri 11:30 AM &bull; Mon 4 PM &bull; Tue 4&ndash;5 PM &bull; Fri 4&ndash;5 PM</div>
+        <div class="coach-bio">[Coach bio &mdash; 2-3 sentences about background, coaching philosophy, and what drives them]</div>
+      </div>
+    </div>
+
+    <!-- Blake -->
+    <div class="coach-card">
+      <div class="coach-avatar l2">BB</div>
+      <div class="coach-info">
+        <div class="coach-name">Blake Burleson</div>
+        <div class="coach-badges">
+          <span class="role-badge coach">Coach</span>
+          <span class="cert-badge l2"><span class="shield">&#x1f6e1;</span> CF-L2</span>
+        </div>
+        <div class="coach-detail"><strong>Specialties:</strong> CrossFit Kids &bull; Gymnastics &bull; Olympic Weightlifting &bull; Dumbbells &bull; Pregnant &amp; Postpartum</div>
+        <div class="coach-detail"><strong>Credentials:</strong> CF-L2 &bull; HL2 Seminar &bull; Spot the Flaw</div>
+        <div class="coach-detail"><strong>CrossFit Open Judge:</strong> 2013&ndash;2026 (14+ years)</div>
+        <div class="coach-detail"><strong>Classes:</strong> Fri 5:30 AM &bull; Wed 4&ndash;6 PM &bull; Sat 10 AM Team WOD</div>
+        <div class="coach-bio">[Coach bio &mdash; 2-3 sentences about background, coaching philosophy, and what drives them]</div>
+      </div>
+    </div>
+
+    <!-- Chantel -->
+    <div class="coach-card">
+      <div class="coach-avatar l2">CA</div>
+      <div class="coach-info">
+        <div class="coach-name">Chantel Arnold</div>
+        <div class="coach-badges">
+          <span class="role-badge coach">Coach</span>
+          <span class="cert-badge l2"><span class="shield">&#x1f6e1;</span> CF-L2</span>
+        </div>
+        <div class="coach-detail"><strong>Credentials:</strong> CF-L2 &bull; Spot the Flaw</div>
+        <div class="coach-detail"><strong>CrossFit Open Judge:</strong> 2018, 2019, 2024, 2025</div>
+        <div class="coach-detail"><strong>Classes:</strong> Mon 5:30 AM &amp; 5&ndash;6 PM &bull; Tue 6 PM</div>
+        <div class="coach-bio">[Coach bio &mdash; 2-3 sentences about background, coaching philosophy, and what drives them]</div>
+      </div>
+    </div>
+
+    <!-- Lauren -->
+    <div class="coach-card">
+      <div class="coach-avatar l1">LW</div>
+      <div class="coach-info">
+        <div class="coach-name">Lauren Wagner</div>
+        <div class="coach-badges">
+          <span class="role-badge coach">Coach</span>
+          <span class="cert-badge l1"><span class="shield">&#x1f6e1;</span> CF-L1</span>
+        </div>
+        <div class="coach-detail"><strong>Credentials:</strong> CF-L1 Certified Trainer</div>
+        <div class="coach-detail"><strong>Classes:</strong> Thu 4:30&ndash;6:30 PM Open Box &bull; Fri 6 PM</div>
+        <div class="coach-bio">[Coach bio &mdash; 2-3 sentences about background, coaching philosophy, and what drives them]</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>READY TO TRAIN WITH US?</h2>
+  <p>Your first class is always free. Come see what certified coaching feels like.</p>
+  <a href="cbr_mockup_freetrial.html" class="btn">BOOK YOUR FREE CLASS &rarr;</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="address">316 W Coffin St, Denison TX 75020</div>
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">TikTok</a>
+  </div>
+  <p>&copy; 2026 CrossFit Barbell Republic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
