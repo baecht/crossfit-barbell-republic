@@ -38,12 +38,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(22,33,62,0.97);backdrop-fi
 .section-header h2{font-family:'Oswald',sans-serif;font-size:2rem;letter-spacing:1.5px;margin-bottom:0.5rem}
 .section-header p{color:#888;max-width:500px;margin:0 auto;font-size:0.95rem}
 
-/* INSTAGRAM GRID */
-.ig-section{padding:0 2rem 4rem;max-width:900px;margin:0 auto}
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.ig-card{aspect-ratio:1;background:#2a2a3e;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden;cursor:pointer;transition:all 0.3s}
-.ig-card:hover{transform:scale(1.03);z-index:2}
-.ig-card .overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 8px;background:linear-gradient(transparent,rgba(0,0,0,0.85));font-size:0.78rem;text-align:center;color:#ccc;letter-spacing:0.3px;font-weight:500}
+/* INSTAGRAM EMBEDS */
+.ig-section{padding:0 2rem 4rem;max-width:1100px;margin:0 auto}
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(326px,1fr));gap:1.5rem;justify-items:center}
+.ig-grid blockquote.instagram-media{margin:0 !important;min-width:326px !important;width:100% !important;max-width:540px !important}
+.ig-placeholder{background:#2a2a3e;border-radius:6px;min-height:500px;width:100%;max-width:540px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;border:2px dashed rgba(255,255,255,0.08)}
+.ig-placeholder .icon{font-size:2.5rem;margin-bottom:1rem;opacity:0.4}
+.ig-placeholder .label{color:#666;font-size:0.9rem;text-align:center;line-height:1.5}
 .ig-follow{text-align:center;margin-top:2rem;font-size:0.95rem;color:#888}
 .ig-follow a{font-weight:600}
 
@@ -132,17 +133,23 @@ footer .socials a:hover{color:#e63946}
 </div>
 <section class="ig-section">
   <div class="ig-grid">
-    <div class="ig-card">&#x1F3CB;&#xFE0F;<div class="overlay">5 AM Crew</div></div>
-    <div class="ig-card">&#x1F4AA;<div class="overlay">PR Day!</div></div>
-    <div class="ig-card">&#x1F938;<div class="overlay">Gymnastics Skills</div></div>
-    <div class="ig-card">&#x1F3C3;<div class="overlay">Saturday Team WOD</div></div>
-    <div class="ig-card">&#x1F389;<div class="overlay">First Class!</div></div>
-    <div class="ig-card">&#x1F44A;<div class="overlay">Coach Life</div></div>
-    <div class="ig-card">&#x1F525;<div class="overlay">Open 2026</div></div>
-    <div class="ig-card">&#x2B50;<div class="overlay">New Member!</div></div>
-    <div class="ig-card">&#x1F3C6;<div class="overlay">Competition Day</div></div>
+    <!-- Featured IG Post -->
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CwFmBovuEiG/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+      <div style="padding:16px;"><a href="https://www.instagram.com/p/CwFmBovuEiG/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank" rel="noopener">View this post on Instagram</a></div>
+    </blockquote>
+
+    <!-- Placeholder slots — more IG embeds can be dropped in here -->
+    <div class="ig-placeholder">
+      <div class="icon">&#x1F4F8;</div>
+      <div class="label">More posts coming soon<br><span style="font-size:0.8rem;opacity:0.7">Featured IG posts will appear here</span></div>
+    </div>
+    <div class="ig-placeholder">
+      <div class="icon">&#x1F4F8;</div>
+      <div class="label">More posts coming soon<br><span style="font-size:0.8rem;opacity:0.7">Featured IG posts will appear here</span></div>
+    </div>
   </div>
-  <p class="ig-follow">Follow us on Instagram <a href="https://www.instagram.com/crossfit.barbellrepublic/" target="_blank" rel="noopener">@crossfit.barbellrepublic</a></p>
+  <script async src="//www.instagram.com/embed.js"></script>
+  <p class="ig-follow">See more on Instagram <a href="https://www.instagram.com/crossfit.barbellrepublic/" target="_blank" rel="noopener">@crossfit.barbellrepublic</a></p>
 </section>
 
 <!-- TESTIMONIALS -->
